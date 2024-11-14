@@ -7,14 +7,15 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Testimonials from "@/components/Testimonials";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 
 
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <AuroraBackground>
+      <BackgroundGradientAnimation>
         <HeroSection />
-      </AuroraBackground>
+      </BackgroundGradientAnimation>
       <BentoGridDemo />
       <FeaturesSection />
       <Testimonials />

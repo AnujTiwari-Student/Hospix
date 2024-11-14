@@ -922,8 +922,14 @@ video {
 .-left-0\.5 {
   left: -0.125rem;
 }
+.-left-1\/2 {
+  left: -50%;
+}
 .-top-0\.5 {
   top: -0.125rem;
+}
+.-top-1\/2 {
+  top: -50%;
 }
 .left-0 {
   left: 0px;
@@ -931,8 +937,14 @@ video {
 .left-1\/2 {
   left: 50%;
 }
+.left-\[calc\(50\%-var\(--size\)\/2\)\] {
+  left: calc(50% - var(--size) / 2);
+}
 .top-0 {
   top: 0px;
+}
+.top-\[calc\(50\%-var\(--size\)\/2\)\] {
+  top: calc(50% - var(--size) / 2);
 }
 .z-10 {
   z-index: 10;
@@ -1007,8 +1019,14 @@ video {
 .h-\[calc\(100\%_\+_4px\)\] {
   height: calc(100% + 4px);
 }
+.h-\[var\(--size\)\] {
+  height: var(--size);
+}
 .h-full {
   height: 100%;
+}
+.h-screen {
+  height: 100vh;
 }
 .min-h-\[6rem\] {
   min-height: 6rem;
@@ -1030,6 +1048,9 @@ video {
 }
 .w-\[calc\(100\%_\+_4px\)\] {
   width: calc(100% + 4px);
+}
+.w-\[var\(--size\)\] {
+  width: var(--size);
 }
 .w-full {
   width: 100%;
@@ -1064,6 +1085,60 @@ video {
 .origin-center {
   transform-origin: center;
 }
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@keyframes moveInCircle {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-fifth {
+  animation: moveInCircle 20s ease infinite;
+}
+@keyframes moveVertical {
+
+  0% {
+    transform: translateY(-50%);
+  }
+
+  50% {
+    transform: translateY(50%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+.animate-first {
+  animation: moveVertical 30s ease infinite;
+}
+@keyframes moveHorizontal {
+
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+.animate-fourth {
+  animation: moveHorizontal 40s ease infinite;
+}
 @keyframes scroll {
 
   to {
@@ -1072,6 +1147,40 @@ video {
 }
 .animate-scroll {
   animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+}
+@keyframes moveInCircle {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-second {
+  animation: moveInCircle 20s reverse infinite;
+}
+@keyframes moveInCircle {
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-third {
+  animation: moveInCircle 40s linear infinite;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -1234,6 +1343,9 @@ video {
 .bg-zinc-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+}
+.bg-\[linear-gradient\(40deg\2c var\(--gradient-background-start\)\2c var\(--gradient-background-end\)\)\] {
+  background-image: linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end));
 }
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -1425,6 +1537,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-purple-600 {
+  --tw-text-opacity: 1;
+  color: rgb(147 51 234 / var(--tw-text-opacity));
+}
 .opacity-0 {
   opacity: 0;
 }
@@ -1433,6 +1549,9 @@ video {
 }
 .opacity-50 {
   opacity: 0.5;
+}
+.opacity-70 {
+  opacity: 0.7;
 }
 .mix-blend-overlay {
   mix-blend-mode: overlay;
@@ -1450,8 +1569,20 @@ video {
   --tw-shadow-color: hsl(var(--input));
   --tw-shadow: var(--tw-shadow-colored);
 }
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.blur-2xl {
+  --tw-blur: blur(40px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .blur-\[10px\] {
   --tw-blur: blur(10px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.blur-lg {
+  --tw-blur: blur(16px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .invert {
@@ -1495,8 +1626,26 @@ video {
 .\[background-size\:300\%\2c _200\%\] {
   background-size: 300%, 200%;
 }
-.\[mask-image\:linear-gradient\(to_right\2c transparent\2c white_20\%\2c white_80\%\2c transparent\)\] {
-  mask-image: linear-gradient(to right,transparent,white 20%,white 80%,transparent);
+.\[background\:radial-gradient\(circle_at_center\2c _rgba\(var\(--fifth-color\)\2c _0\.8\)_0\2c _rgba\(var\(--fifth-color\)\2c _0\)_50\%\)_no-repeat\] {
+  background: radial-gradient(circle at center, rgba(var(--fifth-color), 0.8) 0, rgba(var(--fifth-color), 0) 50%) no-repeat;
+}
+.\[background\:radial-gradient\(circle_at_center\2c _rgba\(var\(--fourth-color\)\2c _0\.8\)_0\2c _rgba\(var\(--fourth-color\)\2c _0\)_50\%\)_no-repeat\] {
+  background: radial-gradient(circle at center, rgba(var(--fourth-color), 0.8) 0, rgba(var(--fourth-color), 0) 50%) no-repeat;
+}
+.\[background\:radial-gradient\(circle_at_center\2c _rgba\(var\(--pointer-color\)\2c _0\.8\)_0\2c _rgba\(var\(--pointer-color\)\2c _0\)_50\%\)_no-repeat\] {
+  background: radial-gradient(circle at center, rgba(var(--pointer-color), 0.8) 0, rgba(var(--pointer-color), 0) 50%) no-repeat;
+}
+.\[background\:radial-gradient\(circle_at_center\2c _rgba\(var\(--second-color\)\2c _0\.8\)_0\2c _rgba\(var\(--second-color\)\2c _0\)_50\%\)_no-repeat\] {
+  background: radial-gradient(circle at center, rgba(var(--second-color), 0.8) 0, rgba(var(--second-color), 0) 50%) no-repeat;
+}
+.\[background\:radial-gradient\(circle_at_center\2c _rgba\(var\(--third-color\)\2c _0\.8\)_0\2c _rgba\(var\(--third-color\)\2c _0\)_50\%\)_no-repeat\] {
+  background: radial-gradient(circle at center, rgba(var(--third-color), 0.8) 0, rgba(var(--third-color), 0) 50%) no-repeat;
+}
+.\[background\:radial-gradient\(circle_at_center\2c _var\(--first-color\)_0\2c _var\(--first-color\)_50\%\)_no-repeat\] {
+  background: radial-gradient(circle at center, var(--first-color) 0, var(--first-color) 50%) no-repeat;
+}
+.\[filter\:url\(\#blurMe\)_blur\(40px\)\] {
+  filter: url(#blurMe) blur(40px);
 }
 .\[mask-image\:linear-gradient\(white\2c transparent\)\] {
   mask-image: linear-gradient(white,transparent);
@@ -1506,6 +1655,24 @@ video {
 }
 .\[mask-image\:radial-gradient\(farthest-side_at_top\2c white\2c transparent\)\] {
   mask-image: radial-gradient(farthest-side at top,white,transparent);
+}
+.\[mix-blend-mode\:var\(--blending-value\)\] {
+  mix-blend-mode: var(--blending-value);
+}
+.\[transform-origin\:calc\(50\%\+400px\)\] {
+  transform-origin: calc(50% + 400px);
+}
+.\[transform-origin\:calc\(50\%-200px\)\] {
+  transform-origin: calc(50% - 200px);
+}
+.\[transform-origin\:calc\(50\%-400px\)\] {
+  transform-origin: calc(50% - 400px);
+}
+.\[transform-origin\:calc\(50\%-800px\)_calc\(50\%\+800px\)\] {
+  transform-origin: calc(50% - 800px) calc(50% + 800px);
+}
+.\[transform-origin\:center_center\] {
+  transform-origin: center center;
 }
 
 
@@ -1891,6 +2058,10 @@ video {
 
   .xl\:w-\[575px\] {
     width: 575px;
+  }
+
+  .xl\:w-\[550px\] {
+    width: 550px;
   }
 
   .xl\:flex-row {

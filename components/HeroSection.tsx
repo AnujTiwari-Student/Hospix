@@ -2,17 +2,17 @@ import React from 'react';
 
 function HeroSection() {
   return (
-    <div className='w-screen xl:flex xl:justify-center xl:items-center'>
+    <div className='w-full h-screen justify-center items-center flex'>
        <div className='flex xl:flex-row flex-col md:gap-x-20 gap-y-6 xl:gap-y-0 md:items-end px-4 md:px-8'>
-            <h1 className='xl:text-6xl text-4xl font-extrabold xl:w-[500px]'>
+            <h1 className='xl:text-6xl text-4xl font-extrabold xl:w-[550px] text-white'>
               Comprehensive Health Services
-              <span className='xl:text-6xl text-4xl text-purple-500'> for Bharat </span>
+              <span className='xl:text-6xl text-4xl text-purple-600'> for Bharat Health </span>
               in one app
             </h1> 
             <div className='flex-col flex gap-y-8'>
-                <p className='xl:text-xl text-lg xl:w-[575px] text-gray-800'>
+                <p className='xl:text-xl text-lg xl:w-[575px] text-white'>
                   Bharat Health app connects you with trusted healthcare providers, access essential health services, and manage your health records 
-                  <span className='text-black font-semibold'> - all in one place.</span> 
+                  <span className='text-purple-500 font-semibold'> - all in one place.</span> 
                   Anytime, anywhere.
                 </p>
                 <div className='flex gap-x-8'>
